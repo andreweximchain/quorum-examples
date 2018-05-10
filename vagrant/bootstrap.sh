@@ -12,7 +12,13 @@ wget -q https://github.com/jpmorganchase/constellation/releases/download/v0.0.1-
 unzip ubuntu1604.zip
 cp ubuntu1604/constellation-node /usr/local/bin && chmod 0755 /usr/local/bin/constellation-node
 cp ubuntu1604/constellation-enclave-keygen /usr/local/bin && chmod 0755 /usr/local/bin/constellation-enclave-keygen
-rm -rf ubuntu1604.zip ubuntu1604
+rm -rf ubuntu1604.zip
+# DIR_NAME=constellation-0.2.0-ubuntu1604
+# wget https://github.com/jpmorganchase/constellation/releases/download/$VER/$DIR_NAME.tar.xz
+# tar -xf $DIR_NAME.tar.xz
+# sudo cp $DIR_NAME/constellation-node /usr/local/bin && sudo chmod 0755 /usr/local/bin/constellation-node
+# rm $DIR_NAME.tar.xz
+
 
 # install golang
 GOREL=go1.7.3.linux-amd64.tar.gz
@@ -24,9 +30,9 @@ PATH=$PATH:/usr/local/go/bin
 echo 'PATH=$PATH:/usr/local/go/bin' >> /home/ubuntu/.bashrc
 
 # make/install quorum
-git clone https://github.com/jpmorganchase/quorum.git
+git clone https://github.com/andreweximchain/quorum.git
 pushd quorum >/dev/null
-git checkout tags/v1.0.2
+# git checkout tags/v1.0.2
 make all
 cp build/bin/geth /usr/local/bin
 cp build/bin/bootnode /usr/local/bin
@@ -34,7 +40,7 @@ popd >/dev/null
 
 # copy examples
 cp -r /vagrant/examples /home/ubuntu/quorum-examples
-chown -R ubuntu:ubuntu /home/ubuntu/quorum /home/ubuntu/quorum-examples
+chown -R ubuntu:ubuntu ~/quorum /home/ubuntu/quorum-examples
 
 # done!
 banner "Quorum"
