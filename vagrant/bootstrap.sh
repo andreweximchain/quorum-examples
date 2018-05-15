@@ -8,7 +8,7 @@ apt-get update
 apt-get install -y build-essential unzip libdb-dev libsodium-dev zlib1g-dev libtinfo-dev cmake sysvbanner wrk libboost-all-dev
 
 # install constellation
-wget -q https://github.com/jpmorganchase/constellation/releases/download/v0.0.1-alpha/ubuntu1604.zip
+wget -O ubuntu1604.zip -q https://github.com/jpmorganchase/constellation/releases/download/v0.0.1-alpha/ubuntu1604.zip
 unzip ubuntu1604.zip
 cp ubuntu1604/constellation-node /usr/local/bin && chmod 0755 /usr/local/bin/constellation-node
 cp ubuntu1604/constellation-enclave-keygen /usr/local/bin && chmod 0755 /usr/local/bin/constellation-enclave-keygen
@@ -23,7 +23,7 @@ rm -rf ubuntu1604.zip ubuntu1604
 # wget https://github.com/ethereum/solidity/archive/v0.4.5.tar.gz
 # tar -xzf $VER.tar.gz
 # cd $DIR_NAME
-git clone https;//github.com/ethereum/solidity
+git clone https://github.com/ethereum/solidity
 cd solidity
 git checkout b318366e
 git submodule update --init --recursive
