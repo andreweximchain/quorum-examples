@@ -14,12 +14,20 @@ cp ubuntu1604/constellation-node /usr/local/bin && chmod 0755 /usr/local/bin/con
 cp ubuntu1604/constellation-enclave-keygen /usr/local/bin && chmod 0755 /usr/local/bin/constellation-enclave-keygen
 rm -rf ubuntu1604.zip ubuntu1604
 
-VER=v0.4.19
-DIR_NAME=solidity_0.4.19
+# VER=v0.4.2
+# DIR_NAME=solidity_0.4.2
 
-wget https://github.com/ethereum/solidity/releases/download/$VER/$DIR_NAME.tar.gz
-tar -xzf $DIR_NAME.tar.gz
-cd $DIR_NAME
+# VER=v0.4.5
+# DIR_NAME=solidity-0.4.5
+# wget https://github.com/ethereum/solidity/releases/download/$VER/$DIR_NAME.tar.gz
+# wget https://github.com/ethereum/solidity/archive/v0.4.5.tar.gz
+# tar -xzf $VER.tar.gz
+# cd $DIR_NAME
+git clone https;//github.com/ethereum/solidity
+cd solidity
+git checkout b318366e
+git submodule update --init --recursive
+scripts/install_deps.sh
 mkdir build
 cd build
 cmake .. && make
