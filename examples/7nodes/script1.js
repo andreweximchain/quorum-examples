@@ -1,6 +1,5 @@
 a = eth.accounts[0]
 web3.eth.defaultAccount = a;
-var solc = require('solc')
 
 var simpleSource = 'contract simplestorage { uint public storedData; function simplestorage(uint initVal) { storedData = initVal; } function set(uint x) { storedData = x; } function get() constant returns (uint retVal) { return storedData; } }'
 var simpleCompiled = web3.eth.compile.solidity(simpleSource)
