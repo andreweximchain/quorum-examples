@@ -1,12 +1,12 @@
-a = eth.accounts[0]
+var a = eth.accounts[0]
 web3.eth.defaultAccount = a
-
-web3.eth.sendTransaction({to:"0xca843569e3427144cead5e4d5999a3d0ccf92b8e", gasPrice:123000000, value:'1000000000000000'}, function$
-   console.log(txhash)
-   var transaction = web3.eth.getTransaction(txhash, function(e, data){
-      console.log(data.gasPrice)
-   })
-   console.log(transaction)
+console.log(a)
+web3.eth.sendTransaction({from: a, to:"0xca843569e3427144cead5e4d5999a3d0ccf92b8e", gasPrice:123000000, value:'1000000000000000'}, function (e, txhash) {
+  console.log(txhash)
+  var transaction = web3.eth.getTransaction(txhash, function (e, data) {
+    console.log(data.gasPrice)
+  })
+  console.log(transaction)
 })
 // var simpleSource = 'contract simplestorage { uint public storedData; function simplestorage(uint initVal) { storedData = initVal; } function set(uint x) { storedData = x; } function get() constant returns (uint retVal) { return storedData; } }'
 // var simpleCompiled = web3.eth.compile.solidity(simpleSource)

@@ -51,6 +51,7 @@ RELEASE="v1.2.1-modified"
 git clone https://github.com/andreweximchain/quorum.git
 pushd quorum >/dev/null
 git checkout $RELEASE
+# git checkout 12e2fdfdc105
 make all
 cp build/bin/geth /usr/local/bin
 cp build/bin/bootnode /usr/local/bin
