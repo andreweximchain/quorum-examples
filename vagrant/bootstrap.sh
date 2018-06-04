@@ -59,7 +59,7 @@ popd >/dev/null
 
 # copy examples
 cp -r /vagrant/examples /home/vagrant/quorum-examples
-chown -R ubuntu:ubuntu ~/quorum /home/vagrant/quorum-examples
+chown -R ubuntu:ubuntu /home/vagrant/quorum-examples
 
 # done!
 banner "Quorum"
